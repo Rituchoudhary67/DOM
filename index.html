@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>DOM</h1>
+        <h3>Document object model</h3>
+    </header>
+    <main>
+       <P CLASS="img-heading"> THE HTML TREE DIAGRAM</P>
+        <img src="dom-tree-diagram.png" alt="dom-tree-diagram">
+        <!-- performatted text it preserves both space and line breaks -->
+        <pre>
+           The <strong>DOM</strong> defines a standard for accessing documents
+           The <strong>Document OBJECT MODEL</strong> is a platform and language-netural interface
+           that allows program and script to dynamically access and update the content structure 
+           and style of a document.
+           <h3>TYPES OF DOM</h3>
+           <ul>
+            <li><h3>CORE DOM</h3>
+                <dd>Standard model for all document type</dd>
+            </li>
+            <li><h3> XML DOM </h3>
+                <dd>Standard model for XML document</dd>
+            </li>
+            <li><h3>HTML DOM</h3>
+                <dd>Standard model for HTML document</dd>
+            </li>
+           </ul>
+           <h3>The HTML DOM is standard object model and programing interface for html </h3>
+           <ul>
+            <li>The html element as <strong>Object</strong></li>
+            <li>The<strong>Properties</strong>of all HTML element</li>
+            <li>the <strong>Methods</strong>to access all html elements</li>
+            <li>The <strong>Event</strong> for all HTMl elements</li>
+           </ul>
+           <h3>SELOCTOR</h3>
+           <ol>
+            <li>getElementByTagName()
+            <dd><ul>
+                <li>The <strong>getElementsByTagName()</strong> method returns a collection of all elements with a specified tag name.</li>
+                <li> The <strong>getElementsByTagName()</strong> method returns an HTMLCollection.</li>
+                <li> The <strong>getElementsByTagName()</strong> property is read-only.</li> 
+                </ul>
+            </dd>
+               <pre>
+                Example:-
+                Get all elements with the tag name "li":
+                const collection = document.getElementsByTagName("li");
+               </pre>
+            </li>
+            <li>
+                getElementByClassName()
+            <pre>
+                The getElementsByClassName method of Document interface returns an array-like
+                object of all child elements which have all of the given class name(s).
+                <h4>Syntax</h4> getElementsByClassName(names)
+                <h5>NOTE</h5> A string representing the class name(s) to match; multiple class names 
+                are separated by whitespace.
+                Example:-document.getElementsByClassName('red test')
+            </pre>
+            <section>
+                Example:- 
+                <div class="red">
+                    LEARNING DOM SELECTOR
+                </div>
+                const color = document.getElementsByClassName("red");
+                console.log(color)
+            </section>
+            </li>
+            <li>getElementById()
+                <pre id="eleid">
+                    1. The <strong>getElementById()</strong> method returns an element with a specified value.
+                    2. The <strong>getElementById()</strong> method returns <strong>null</strong> if the element does not exist.
+                    3. The <strong>getElementById()</strong> method is one of the most common methods in the HTML DOM. 
+                       It is used almost every time you want to read or edit an HTML element.
+
+                    Note:- Any id should be unique, but: 
+                           If two or more elements with the same id exist, getElementById() returns the first. 
+                             
+                    EXAMPLE:- 
+                    1. const element = document.getElementById("eleid")
+                       console.log(element)
+                    2. if i want to change the color by id name.
+                       const myElement = document.getElementById("demo");
+                       myElement.style.color = "red";      
+                </pre>
+            </li>
+            <li>querySelector()
+            <pre class="info">
+                The <strong>querySelector()</strong> method returns the first element that matches a CSS selector.
+                To return all matches (not only the first), use the <strong>querySelectorAll()</strong> instead.
+                Both <strong>querySelector()</strong> and <strong>querySelectorAll()</strong> throw a SYNTAX_ERR 
+                exception if the selector(s) is invalid.
+
+                Example:- 1.Get the first p element:
+                            document.querySelector("p");
+                          2.Get the first element with class="example":
+                            document.querySelector(".example");  
+            </pre>
+            </li>
+            <li>querySelectorAll()
+                <pre>
+                    The Document method <strong>querySelectorAll()</strong> returns a static (not live) NodeList representing a list
+                    of the document's elements that match the specified group of selectors.
+
+                    Syntax:- querySelectorAll(selectors)
+
+                    Example:- 1. Get the all p element: 
+                                 const allelement = document.querySelectorAll("p");
+                </pre>
+            </li>
+           </ol>
+
+           <table>
+                <caption>The Difference Between an HTMLCollection and a NodeList</caption>
+                     <tr>
+                        <th>Node list</th>
+                        <th>HTML collection</th>
+                     </tr>
+                     <tr>
+                        <td>A NodeList is a collection of document nodes(element nodes, attribute nodes, and text nodes)</td>
+                        <td>An HTMLCollection is a collection of document elements.</td>
+                     </tr>
+                     <tr>
+                        <td>NodeList items can only be accessed by their index number.</td>
+                        <td>HTMLCollection items can be accessed by their name, id, or index number.</td>
+                     </tr>
+                     <tr>
+                        <td>A NodeList is most often a static collection. </td>
+                        <td>An HTMLCollection is always a live collection.</td>
+                     </tr>
+           </table>
+        </pre>
+    </main>
+   <script src="app.js"></script> 
+</body>
+</html>
